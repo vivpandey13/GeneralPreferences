@@ -1,0 +1,29 @@
+﻿@model GerneralPreferences.Controllers.DepartmentModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.RadioButtonFor(m => m.SelectedDepartment, item.ID) @item.Name
+                </td>
+            </tr>
+        }
+
+    </table>
+    <input type="submit" name="submit" />
+}
+
